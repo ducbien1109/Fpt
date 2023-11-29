@@ -1,38 +1,53 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20221228/pngtree-red-atmospheric-real-estate-technology-wind-business-banner-background-image_1503702.jpg);
+}
+.search{
+  width: 20%;
+}
+.information{
   text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.menu-header{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  background: #001529;
 }
+/* MenuComponent.css */
 
-.App-link {
-  color: #61dafb;
+.ant-menu-item {
+  font-size: 18px; /* Điều chỉnh kích thước chữ của mục menu */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listProduct{
+  margin: 0 auto;
+  width: 50%;
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+li{
+  list-style: none;
+  color: red;
+  font-size: 20px;
+}
+.listProduct ul{
+  padding-top: 20px;
+  width: 150px;
+  height: 150px;
+  background: #ffffff;
+  border-radius: 50px;
+  text-align: center;
 }
