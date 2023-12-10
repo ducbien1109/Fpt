@@ -1,5 +1,8 @@
 const path = {
     home: '/',
-    admin:'admin',
+    admin:'/admin',
+    edit: '/admin/:id',
+    login:'/login',
+    register:'/register'
 }
 export default path

@@ -5,7 +5,7 @@ import {
   CreditCardOutlined,
   UserAddOutlined,
   ShoppingCartOutlined,
-  UserOutlined
+  UserOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 const { Search } = Input;
@@ -13,8 +13,10 @@ const { Search } = Input;
 function Header() {
   const navigate = useNavigate();
   const handleAdmin = () => {
-    navigate("admin");
+    navigate("/login");
   };
+ 
+
   return (
     <div>
       <Layout className="layout">
@@ -46,7 +48,7 @@ function Header() {
           />
           <div className="information">
             <BookOutlined style={{ fontSize: "24px" }} />
-            <p >Thông tin hay</p>
+            <p>Thông tin hay</p>
           </div>
           <div className="information">
             <CreditCardOutlined style={{ fontSize: "24px" }} />
@@ -61,7 +63,7 @@ function Header() {
             <p>Giỏ hàng</p>
           </div>
           <div className="information">
-            <UserOutlined  style={{ fontSize: "24px" }} />
+            <UserOutlined style={{ fontSize: "24px" }} />
             <p onClick={handleAdmin}>Admin</p>
           </div>
         </div>

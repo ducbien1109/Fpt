@@ -5,7 +5,7 @@ const getListProduct = {
     return instance.get("/data");
   },
   getDetail(postId) {
-    return instance.get(`/data/${postId}`);
+    return instance.get(`/data/${postId}`)
   },
   create(body) {
     return instance.post("/data", body);
@@ -13,8 +13,9 @@ const getListProduct = {
   delete(postId) {
     return instance.delete(`/data/${postId}`);
   },
-  update(postId, body) {
-    return instance.put(`/data/${postId}`, body);
+  update(body, postId) {
+    return instance.put(`/data/${postId}` ,body);
   },
+  
 };
 export default getListProduct;
