@@ -9,7 +9,6 @@ import {
   Button,
   Layout,
   theme,
-  Menu,
   Select,
 } from "antd";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,16 +16,15 @@ import getListProduct from "../api/listProduct";
 import { toast } from "react-toastify";
 import TableProduct from "../components/TableProduct";
 import BtnComponent from "../components/BtnComponent";
-const Admin = (dataSource) => {
+const Admin = ({dataSource}) => {
   const navigate = useNavigate();
   var isLogins = localStorage.getItem("isLogin");
   if (!isLogins) {
-    setTimeout(()=>{
-      navigate("/login")
-    })
+    setTimeout(() => {
+      navigate("/login");
+    });
   }
   const { Header, Sider, Content } = Layout;
-  const [collapsed, setCollapsed] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
   const { id } = useParams();
   const {
@@ -40,6 +38,8 @@ const Admin = (dataSource) => {
       update(value);
     } else {
       createProduct(value);
+  console.log(createProduct);
+
     }
   };
 
@@ -93,28 +93,28 @@ const Admin = (dataSource) => {
       } else if (selectedOption === "laptop") {
         const a = await getListProduct.create(productData);
       }
+      console.log(productData);
       clear();
-      navigate("/");
+      // navigate("/");
       toast.success("Thêm thành công");
     } catch (error) {
       console.error("Lỗi khi thêm sản phẩm:", error);
       toast.error("Lỗi khi thêm sản phẩm");
     }
   };
-
   const backHome = () => {
     navigate("/");
   };
   const clear = () => {
     form.resetFields();
   };
-  const handleHome = ()=>{
-    navigate('/')
-  }
+  const handleHome = () => {
+    navigate("/");
+  };
   return (
     <div>
-      <div style={{textAlign:'right'}}>
-      <BtnComponent type ="#ffffff" name = 'Logout' handleClick = {handleHome}/>
+      <div style={{ textAlign: "right" }}>
+        <BtnComponent type="#ffffff" name="Logout" handleClick={handleHome} />
       </div>
       <Card
         title={id ? "update" : "add"}

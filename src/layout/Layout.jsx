@@ -4,7 +4,7 @@ import MenuComponent from "../components/MenuComponent";
 import Slide from "../components/Slide";
 import Content from "../components/Content";
 import ListProduct from "../components/ListProduct";
-import Onchain from "../components/Onchain";
+import FooterComponent from "../components/FooterComponent";
 
 const Layout = () => {
   return (
@@ -12,7 +12,6 @@ const Layout = () => {
       <div>
         <Header />
         <MenuComponent />
-        <Onchain/>
       </div>
       <div>
         <Slide/>
@@ -20,6 +19,7 @@ const Layout = () => {
       </div>
       <div>
         <ListProduct/>
+        <FooterComponent/>
       </div>
     </div>
   );

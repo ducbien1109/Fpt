@@ -11,11 +11,11 @@ const Slide = () => {
   };
   
   return (
-    <div>
+    <div style={{paddingBottom:'42px'}}>
       <div style={{ textAlign: "center" }}>
         <img
           src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2023/11/24/638364223247226370_desk-header.png"
-          width={1000}
+          width="100%"
         />
       </div>
       <Carousel autoplay>

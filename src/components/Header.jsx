@@ -7,6 +7,7 @@ import {
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import {TypeAnimation} from 'react-type-animation'
 import { useNavigate } from "react-router-dom";
 const { Search } = Input;
 
@@ -15,11 +16,15 @@ function Header() {
   const handleAdmin = () => {
     navigate("/login");
   };
- 
+  const handleHome = ()=>{
+    navigate('/')
+  } 
 
   return (
     <div>
-      <Layout className="layout">
+     
+      <Layout style={{width:'100%'}}>
+      
         <div
           style={{
             display: "flex",
@@ -29,6 +34,17 @@ function Header() {
             justifyContent: "center",
           }}
         >
+          <TypeAnimation
+        sequence={[
+          `Ngô Đức Biển`,
+          1000,
+          "",
+        ]}
+        speed={50}
+        className="test"
+        style={{ whiteSpace: 'pre-line', fontSize: '2em', }}
+        repeat={Infinity}
+      />
           <div>
             <Image
               width={200}
@@ -48,7 +64,7 @@ function Header() {
           />
           <div className="information">
             <BookOutlined style={{ fontSize: "24px" }} />
-            <p>Thông tin hay</p>
+            <p onClick={handleHome}>Home</p>
           </div>
           <div className="information">
             <CreditCardOutlined style={{ fontSize: "24px" }} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image } from "antd";
+import { Image, Card } from "antd";
 import getListProduct from "../api/listProduct";
 import { setListProduct, getListProductReducer } from "../store/Reducer";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,21 +19,30 @@ const Content = () => {
     getAllProducts();
   }, []);
   return (
-    <div className="listProduct">
-      {dataProduct.map((product) => {
-        return (
-          <ul key={product.id}>
-            <Image
-              src={product.img}
-              width={100}
-              height={80}
-              style={{ borderRadius: "20px" }}
-            />
-            <li>{product.name}</li>
-          </ul>
-        );
-      })}
-    </div>
+    <Card
+      style={{ maxWidth:1100, margin: "0 auto" }}
+      title="List Product"
+    >
+      <div class="container">
+        <div className="listProduct">
+          {dataProduct.map((product) => {
+            return (
+              <ul key={product.id}>
+                <li>
+                <Image
+                  src={product.img}
+                  width={100}
+                  height={80}
+                  style={{ borderRadius: "20px" }}
+                />
+                </li>
+                <li>{product.name}</li>
+              </ul>
+            );
+          })}
+        </div>
+      </div>
+    </Card>
   );
 };
 
